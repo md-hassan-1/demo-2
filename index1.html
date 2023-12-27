@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container p-4 mt-4 border rounded">
+      <h1>Creat Bill</h1>
+
+      <div class="row">
+        <div class="col-md-6">
+            <form action="" class="form bg-success text-white p-4">
+                <div class="mb-3">
+                    <label class="form-label">Item Name</label>
+                    <input type="text" class="form-control" id="item-name" placeholder="eg.sugar 20g">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Item Bace Price</label>
+                    <input type="number" class="form-control " id="item-price" placeholder="eg.58948" onkeyup="puttotal()">
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Qty</label>
+                    <input type="number" class="form-control " id="item-quit" placeholder="eg.sugar 20g" value="1" onkeyup="puttotal()">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Total Amount</label>
+                    <input type="text" class="form-control " id="item-total" value="" >
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addbill()">add item to bill</button>
+               
+            </form>
+
+        </div>
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                      <td colspan="5">
+                          <strong>
+                              to
+                              <br>
+                          </strong>
+                          <span>rohit</span>
+                          <span>78/24, South Exntension, South delhi - 110032 </span>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="5">
+                          <strong>
+                              From
+                              <br>
+                          </strong>
+                          <span>rohit</span>
+                          <span>78/24, South Exntension, South delhi - 110032 </span>
+                      </td>
+                  </tr>
+                   <tr>
+                      <th>s.no</th>
+                      <th>Item</th>
+                      <th>Price</th>
+                      <th>Qty</th>
+                      <th>Total</th>
+                   </tr>
+      
+                </thead>
+      
+                <tbody id="tbody">
+                    
+                </tbody>
+              </table>
+        </div>
+      </div>
+
+
+    </div>
+    <script src="script1.js"></script>
+    
+</body>
+</html>

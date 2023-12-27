@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container p-4 mt-4 border rounded">
+        <h1>Create Bill</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" class="form-group bg-dark text-white p-4">
+                    <div class="mb-3">
+                        <label for="item-name" class="form-label">Item Name</label>
+                        <input type="text" id="item-name" class="form-control rounded-0" placeholder="e.g., sugar 10kg">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item-price" class="form-label">Item Base Price</label>
+                        <input type="number" id="item-price" class="form-control border rounded-0" placeholder="e.g., 79383" onkeyup="dototal()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item-qty" class="form-label">Qty</label>
+                        <input type="number" id="item-qty" class="form-control border rounded-0" placeholder="e.g., 10" value="1" onkeyup="dototal()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="item-total" class="form-label">Total Amount</label>
+                        <input type="text" id="item-total" class="form-control border rounded-0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="billing-status" class="form-label" id="billing-status">Status</label>
+                        <select id="billing-status" class="form-control border rounded-0">
+                            <option value="" selected>Select</option>
+                            <option value="paid">Paid</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-success rounded-0" type="button" onclick="additem()">Add Item to Bill</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td colspan="5">
+                                <strong>
+                                    To
+                                    <br>
+                                </strong>
+                                <span>Mohd Hassan</span>
+                                <br>
+                                <span>78/24, South Extension, South Delhi - 110032 </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <strong>
+                                    From
+                                    <br>
+                                </strong>
+                                <span>Md Hassan</span>
+                                <br>
+                                <span>78/24, South Extension, South Delhi - 110032 </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+
+</html>

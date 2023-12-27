@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container p-4 mt-4 border rounded">
+
+    <h1>creat bill</h1>
+    <div class="row">
+        <div class="col-md-6">
+      <form class="form bg-success bg-dark text-white p-4">
+        <div class="mb-3">
+            <label for="" class="form-label">item-name</label>
+            <input type="text" class="form-control" id="item-name" placeholder="eg.type item name">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">item-price</label>
+            <input type="number" class="form-control" id="item-price" placeholder="eg.4749" onkeyup="dototal()">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">qty</label>
+            <input type="number" class="form-control" id="qty" value="1" onkeyup="dototal()">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">total</label>
+            <input type="number" class="form-control" id="total" placeholder="">
+        </div>
+   <button  type="button" class="btn btn-primary"onclick="add()" >Add Bill</button>
+      </form>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table table-bordered">
+
+                <thead>
+                    <tr>
+                        <td colspan="5">
+                            <strong>
+                                To
+                                <br>
+                            </strong>
+                            <span>Mohd Hassan</span>
+                            <br>
+                            <span>78/24, South Extension, South Delhi - 110032 </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <strong>
+                                From
+                                <br>
+                            </strong>
+                            <span>Md Hassan</span>
+                            <br>
+                            <span>78/24, South Extension, South Delhi - 110032 </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+    <script>
+       let  sno = 1
+         function add(){
+            item_name = document.querySelector("#item-name")
+            item_price = document.querySelector("#item-price")
+            item_qty  = document.querySelector("#qty")
+            item_total = document.querySelector("#total")
+
+            if(item_name.value!="" && item_price.value !="" && item_qty.value !=""){
+
+            let tr = document.createElement("tr")
+           td_sno =document.createElement("td")
+           td_sno.innerText = sno
+           sno++
+
+
+            let itemNmae = document.createElement("td")
+            itemNmae.innerText=item_name.value
+            
+            let itemPrice = document.createElement("td")
+            itemPrice.innerText=item_price.value
+
+            let itemQty = document.createElement("td")
+            itemQty.innerText=item_qty.value
+
+            let  itemTotal = document.createElement("td")
+            itemTotal.innerText=(Number(item_price.value) * Number(item_qty.value))
+
+            tr.append(td_sno)
+            tr.append(itemNmae)
+            tr.append(itemPrice)
+            tr.append(itemQty)
+            tr.append(itemTotal)
+
+
+            let tbody = document.querySelector("#tbody")
+              tbody.append(tr)
+
+
+              item_name.value=""
+              item_price.value=""
+              item_qty.value=""
+              item_total.value=""
+
+            }
+            else{
+                alert('plse fill tha all field')
+            }
+
+
+
+         }
+         function dototal(){
+            item_price = document.querySelector("#item-price")
+            item_qty  = document.querySelector("#qty")
+            item_total = document.querySelector("#total")
+            total = Number(item_qty.value) * Number(item_price.value)
+            item_total.value = total
+         }
+    </script>
+</body>
+</html>
